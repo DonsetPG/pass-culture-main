@@ -2,9 +2,9 @@ version: '3'
 
 services:
   postgres:
-    image: postgres:10.1
+    build: dockerfiles/postgres
     volumes:
-      - "./api/postgres_data:/var/lib/postgresql/data"
+      - ./api/postgres_data:/var/lib/postgresql/data
     env_file:
       - env_file
     networks:
@@ -30,7 +30,7 @@ services:
       - ./dockerfiles/nginx/conf.d:/etc/nginx/conf.d
     networks:
       - web_nw
-    depends_on: 
+    depends_on:
       - flask
 
 networks:
