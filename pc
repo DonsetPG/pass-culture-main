@@ -144,7 +144,8 @@ elif [[ "$CMD" == "install" ]]; then
 			 ./pc symlink;
 			 cd $ROOT_PATH/shared && yarn install;
        cd $ROOT_PATH/webapp && yarn;
-			 cd $ROOT_PATH/pro && yarn'
+			 cd $ROOT_PATH/pro && yarn;
+			 ./pc install-hooks'
 elif [[ "$CMD" == "install-hooks" ]]; then
     RUN='cd $ROOT_PATH;
             ln -s -f ../../../../hooks/pre-push .git/modules/api/hooks/pre-push'
