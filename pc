@@ -145,6 +145,9 @@ elif [[ "$CMD" == "install" ]]; then
 			 cd $ROOT_PATH/shared && yarn install;
        cd $ROOT_PATH/webapp && yarn;
 			 cd $ROOT_PATH/pro && yarn'
+elif [[ "$CMD" == "install-hooks" ]]; then
+    RUN='cd $ROOT_PATH;
+            ln -s -f ../../../../hooks/pre-push .git/modules/api/hooks/pre-push'
 elif [[ "$CMD" == "install-geoip" ]]; then
 	RUN='wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz;
 	 		 gzip -df GeoLite2-City.mmdb.gz;
